@@ -34,7 +34,19 @@ def print_student_list():
       trên một dòng theo định dạng: " - Ten: [Họ tên], Nam sinh: [Năm sinh], Dia chi: [Địa chỉ]"
     """
     ### VIẾT CODE CỦA BẠN VÀO ĐÂY ###
-    pass # Xóa dòng này khi bạn viết code
+    print("--- DANH SACH SINH VIEN ---")
+    
+    # Nếu danh sách trống
+    if not student_list:
+        print("Danh sach trong.")
+        return
+
+    # Duyệt qua và in thông tin
+    for student in student_list:
+        name = student["name"]
+        year = student["year_of_birth"]
+        address = student["address"]
+        print(f" - Ten: {name}, Nam sinh: {year}, Dia chi: {address}")
 
 def search_student(search_name):
     """
