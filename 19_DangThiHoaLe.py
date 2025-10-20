@@ -58,7 +58,28 @@ def search_student(search_name):
     - Nếu không tìm thấy, in ra "Khong tim thay sinh vien nao.".
     """
     ### VIẾT CODE CỦA BẠN VÀO ĐÂY ###
-    pass # Xóa dòng này khi bạn viết code
+    print("--- KET QUA TIM KIEM ---")
+    
+    found_students = []
+    # Chuyển tên tìm kiếm sang chữ thường để không phân biệt hoa thường
+    search_name_lower = search_name.lower()
+
+    # Duyệt qua danh sách để tìm kiếm
+    for student in student_list:
+        student_name_lower = student["name"].lower()
+        # Kiểm tra xem tên sinh viên có chứa chuỗi tìm kiếm không
+        if search_name_lower in student_name_lower:
+            found_students.append(student)
+
+    # In kết quả
+    if not found_students:
+        print("Khong tim thay sinh vien nao.")
+    else:
+        for student in found_students:
+            name = student["name"]
+            year = student["year_of_birth"]
+            address = student["address"]
+            print(f" - Ten: {name}, Nam sinh: {year}, Dia chi: {address}")
 
 # --- Phần thực thi chính để kiểm tra ---
 # Sinh viên không cần chỉnh sửa phần này.
